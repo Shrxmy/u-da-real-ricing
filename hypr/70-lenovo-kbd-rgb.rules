@@ -1,0 +1,3 @@
+# Lenovo LOQ/Legion 4-zone keyboard RGB (ITE 8295): let the logged-in user set colors (hypr/kbdlight.py).
+# Install: sudo install -m 644 hypr/70-lenovo-kbd-rgb.rules /etc/udev/rules.d/ && sudo udevadm control --reload && sudo udevadm trigger -s hidraw
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="048d", ATTRS{idProduct}=="c993", TAG+="uaccess"

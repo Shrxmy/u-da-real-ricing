@@ -61,6 +61,7 @@ push_accent() { # ACCENT SAND
       -e "s/^gradient_color_5 = .*/gradient_color_5 = '#$2'/" "$cava"
     pkill -USR1 -x cava || true # reload config
   fi
+  python3 -I "$here/kbdlight.py" auto >/dev/null 2>&1 || true # keyboard: accent on AC, off on battery
 }
 
 case "${1:-}" in
@@ -84,6 +85,7 @@ case "${1:-}" in
     # always: Fuzzel won't start if its include is missing. No push_accent: at login Waybar is
     # still starting and SIGUSR2 before its handler is installed kills it; apps read the files at start.
     write_accent "$accent" "$sand"
+    python3 -I "$here/kbdlight.py" auto >/dev/null 2>&1 || true # keyboard matches power state at login
     ;;
   "")
     mapfile -t files < <(find "$dir" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) | sort)

@@ -136,6 +136,8 @@ main() {
   link_file "$RICE_DIR/hypr/hyprlock.conf" "$HOME/.config/hypr/hyprlock.conf"
   link_file "$RICE_DIR/hypr/wallpaper.sh" "$HOME/.config/hypr/wallpaper.sh"
   link_file "$RICE_DIR/hypr/accent.py" "$HOME/.config/hypr/accent.py"
+  link_file "$RICE_DIR/hypr/kbdlight.py" "$HOME/.config/hypr/kbdlight.py"
+  link_file "$RICE_DIR/hypr/power-hook.sh" "$HOME/.config/hypr/power-hook.sh"
   link_file "$RICE_DIR/quickshell/wallpaper" "$HOME/.config/quickshell/wallpaper"
   link_file "$RICE_DIR/quickshell/wallpicker" "$HOME/.config/quickshell/wallpicker"
 
@@ -180,6 +182,7 @@ main() {
   fi
 
   log "Done. For Spotify: spicetify config current_theme Retro color_scheme base && spicetify backup apply"
+  log "Keyboard RGB (Lenovo LOQ/Legion): sudo install -m 644 $RICE_DIR/hypr/70-lenovo-kbd-rgb.rules /etc/udev/rules.d/ && sudo udevadm control --reload && sudo udevadm trigger -s hidraw"
 }
 
 main "$@"
