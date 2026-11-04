@@ -1,0 +1,62 @@
+/* Retro glass: flat squares, hairline panels, amber accents (--spice-button).
+   Transparency comes from Hyprland's "spotify-glass" rule, not from here. */
+
+/* Square everything, like the Hyprland windows (rounding = 0) */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* Hairline separators instead of floating rounded panels */
+.Root__nav-bar,
+.Root__main-view,
+.Root__right-sidebar {
+  border: 1px solid var(--spice-highlight) !important;
+}
+
+/* Amber line across the top of the player bar */
+.Root__now-playing-bar {
+  border-top: 2px solid var(--spice-button) !important;
+}
+
+/* Progress and volume bars in the accent */
+.progress-bar {
+  --fg-color: var(--spice-button) !important;
+  --bg-color: var(--spice-button-disabled) !important;
+}
+
+/* Cards lift with an accent outline on hover */
+.main-card-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+}
+.main-card-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 2px var(--spice-button) !important;
+}
+
+/* Mono details: search, track times */
+.main-topBar-searchBar,
+.playback-bar__progress-time-elapsed,
+.playback-bar__progress-time-remaining,
+[data-testid="playback-position"],
+[data-testid="playback-duration"] {
+  font-family: "Inconsolata Nerd Font", monospace !important;
+}
+
+/* Slim accent scrollbar */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--spice-button-disabled) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--spice-button) !important;
+}
+
+::selection {
+  background: var(--spice-button);
+  color: var(--spice-main);
+}

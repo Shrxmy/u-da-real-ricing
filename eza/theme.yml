@@ -1,0 +1,237 @@
+# eza theme matching the Retro Clean palette (oh-my-posh / Claude Code / pi)
+# amber #cc9166  sand #d9ac8c  text #c6c0b9  muted #8a8a8a  subtle #4d4d4d
+# mauve #b894af  sage #778c73  rose #a97070  slate #8a99a8
+colourful: true
+
+filekinds:
+  normal: { foreground: "#c6c0b9" }
+  directory: { foreground: "#cc9166", is_bold: true }
+  symlink: { foreground: "#8a99a8" }
+  executable: { foreground: "#778c73", is_bold: true }
+  pipe: { foreground: "#b894af" }
+  socket: { foreground: "#b894af" }
+  block_device: { foreground: "#d9ac8c" }
+  char_device: { foreground: "#d9ac8c" }
+  special: { foreground: "#b894af" }
+  mount_point: { foreground: "#8a99a8", is_underline: true }
+
+file_type:
+  image: { foreground: "#c6c0b9" }
+  video: { foreground: "#c6c0b9" }
+  music: { foreground: "#c6c0b9" }
+  lossless: { foreground: "#c6c0b9" }
+  document: { foreground: "#c6c0b9" }
+  compressed: { foreground: "#c6c0b9" }
+  crypto: { foreground: "#c6c0b9" }
+  source: { foreground: "#c6c0b9" }
+  build: { foreground: "#c6c0b9", is_underline: true }
+  compiled: { foreground: "#8a8a8a" }
+  temp: { foreground: "#4d4d4d" }
+
+perms:
+  user_read: { foreground: "#d9ac8c" }
+  user_write: { foreground: "#cc9166" }
+  user_execute_file: { foreground: "#778c73", is_bold: true }
+  user_execute_other: { foreground: "#778c73" }
+  group_read: { foreground: "#8a8a8a" }
+  group_write: { foreground: "#8a8a8a" }
+  group_execute: { foreground: "#8a8a8a" }
+  other_read: { foreground: "#4d4d4d" }
+  other_write: { foreground: "#4d4d4d" }
+  other_execute: { foreground: "#4d4d4d" }
+  special_user_file: { foreground: "#b894af" }
+  special_other: { foreground: "#b894af" }
+  attribute: { foreground: "#8a8a8a" }
+
+size:
+  major: { foreground: "#d9ac8c" }
+  minor: { foreground: "#8a8a8a" }
+  number_byte: { foreground: "#8a8a8a" }
+  number_kilo: { foreground: "#c6c0b9" }
+  number_mega: { foreground: "#d9ac8c" }
+  number_giga: { foreground: "#cc9166", is_bold: true }
+  number_huge: { foreground: "#a97070", is_bold: true }
+  unit_byte: { foreground: "#4d4d4d" }
+  unit_kilo: { foreground: "#8a8a8a" }
+  unit_mega: { foreground: "#8a8a8a" }
+  unit_giga: { foreground: "#cc9166" }
+  unit_huge: { foreground: "#a97070" }
+
+users:
+  user_you: { foreground: "#d9ac8c" }
+  user_root: { foreground: "#a97070", is_bold: true }
+  user_other: { foreground: "#8a8a8a" }
+  group_yours: { foreground: "#8a8a8a" }
+  group_root: { foreground: "#a97070" }
+  group_other: { foreground: "#4d4d4d" }
+
+links:
+  normal: { foreground: "#8a99a8" }
+  multi_link_file: { foreground: "#8a99a8", is_bold: true }
+
+git:
+  new: { foreground: "#778c73" }
+  modified: { foreground: "#cc9166" }
+  deleted: { foreground: "#a97070" }
+  renamed: { foreground: "#8a99a8" }
+  typechange: { foreground: "#b894af" }
+  ignored: { foreground: "#4d4d4d" }
+  conflicted: { foreground: "#a97070", is_bold: true }
+
+git_repo:
+  branch_main: { foreground: "#778c73" }
+  branch_other: { foreground: "#cc9166" }
+  git_clean: { foreground: "#778c73" }
+  git_dirty: { foreground: "#cc9166" }
+
+punctuation: { foreground: "#4d4d4d" }
+date: { foreground: "#8a99a8" }
+header: { foreground: "#c6c0b9", is_underline: true }
+symlink_path: { foreground: "#8a99a8" }
+broken_symlink: { foreground: "#a97070" }
+broken_path_overlay: { is_underline: true }
+control_char: { foreground: "#a97070" }
+inode: { foreground: "#8a8a8a" }
+blocks: { foreground: "#8a8a8a" }
+octal: { foreground: "#8a8a8a" }
+
+# Brand-colored icons per file type (glyphs stay eza's defaults)
+extensions:
+  py: { icon: { style: { foreground: "#4b8bbe" } } }
+  pyi: { icon: { style: { foreground: "#4b8bbe" } } }
+  pyw: { icon: { style: { foreground: "#4b8bbe" } } }
+  ipynb: { icon: { style: { foreground: "#f57d01" } } }
+  c: { icon: { style: { foreground: "#599eff" } } }
+  h: { icon: { style: { foreground: "#599eff" } } }
+  cpp: { icon: { style: { foreground: "#a074c4" } } }
+  cc: { icon: { style: { foreground: "#a074c4" } } }
+  cxx: { icon: { style: { foreground: "#a074c4" } } }
+  hpp: { icon: { style: { foreground: "#a074c4" } } }
+  hh: { icon: { style: { foreground: "#a074c4" } } }
+  hxx: { icon: { style: { foreground: "#a074c4" } } }
+  rs: { icon: { style: { foreground: "#dea584" } } }
+  go: { icon: { style: { foreground: "#00add8" } } }
+  js: { icon: { style: { foreground: "#f1e05a" } } }
+  mjs: { icon: { style: { foreground: "#f1e05a" } } }
+  cjs: { icon: { style: { foreground: "#f1e05a" } } }
+  ts: { icon: { style: { foreground: "#3178c6" } } }
+  mts: { icon: { style: { foreground: "#3178c6" } } }
+  cts: { icon: { style: { foreground: "#3178c6" } } }
+  jsx: { icon: { style: { foreground: "#61dafb" } } }
+  tsx: { icon: { style: { foreground: "#61dafb" } } }
+  vue: { icon: { style: { foreground: "#41b883" } } }
+  svelte: { icon: { style: { foreground: "#ff3e00" } } }
+  html: { icon: { style: { foreground: "#e34c26" } } }
+  htm: { icon: { style: { foreground: "#e34c26" } } }
+  css: { icon: { style: { foreground: "#42a5f5" } } }
+  scss: { icon: { style: { foreground: "#f55385" } } }
+  sass: { icon: { style: { foreground: "#f55385" } } }
+  json: { icon: { style: { foreground: "#cbcb41" } } }
+  jsonc: { icon: { style: { foreground: "#cbcb41" } } }
+  json5: { icon: { style: { foreground: "#cbcb41" } } }
+  yml: { icon: { style: { foreground: "#cb4b16" } } }
+  yaml: { icon: { style: { foreground: "#cb4b16" } } }
+  toml: { icon: { style: { foreground: "#9c4221" } } }
+  ini: { icon: { style: { foreground: "#8a99a8" } } }
+  conf: { icon: { style: { foreground: "#8a99a8" } } }
+  cfg: { icon: { style: { foreground: "#8a99a8" } } }
+  env: { icon: { style: { foreground: "#8a99a8" } } }
+  md: { icon: { style: { foreground: "#519aba" } } }
+  mdx: { icon: { style: { foreground: "#519aba" } } }
+  rst: { icon: { style: { foreground: "#519aba" } } }
+  txt: { icon: { style: { foreground: "#89e051" } } }
+  csv: { icon: { style: { foreground: "#89e051" } } }
+  tsv: { icon: { style: { foreground: "#89e051" } } }
+  java: { icon: { style: { foreground: "#cc3e44" } } }
+  jar: { icon: { style: { foreground: "#cc3e44" } } }
+  kt: { icon: { style: { foreground: "#7f52ff" } } }
+  kts: { icon: { style: { foreground: "#7f52ff" } } }
+  rb: { icon: { style: { foreground: "#cc342d" } } }
+  erb: { icon: { style: { foreground: "#cc342d" } } }
+  php: { icon: { style: { foreground: "#777bb3" } } }
+  lua: { icon: { style: { foreground: "#51a0cf" } } }
+  sh: { icon: { style: { foreground: "#4eaa25" } } }
+  bash: { icon: { style: { foreground: "#4eaa25" } } }
+  zsh: { icon: { style: { foreground: "#4eaa25" } } }
+  fish: { icon: { style: { foreground: "#4eaa25" } } }
+  vim: { icon: { style: { foreground: "#019833" } } }
+  sql: { icon: { style: { foreground: "#e38c00" } } }
+  db: { icon: { style: { foreground: "#e38c00" } } }
+  sqlite: { icon: { style: { foreground: "#e38c00" } } }
+  pdf: { icon: { style: { foreground: "#b30b00" } } }
+  doc: { icon: { style: { foreground: "#2b579a" } } }
+  docx: { icon: { style: { foreground: "#2b579a" } } }
+  xls: { icon: { style: { foreground: "#217346" } } }
+  xlsx: { icon: { style: { foreground: "#217346" } } }
+  ppt: { icon: { style: { foreground: "#d24726" } } }
+  pptx: { icon: { style: { foreground: "#d24726" } } }
+  zip: { icon: { style: { foreground: "#eca517" } } }
+  tar: { icon: { style: { foreground: "#eca517" } } }
+  gz: { icon: { style: { foreground: "#eca517" } } }
+  tgz: { icon: { style: { foreground: "#eca517" } } }
+  xz: { icon: { style: { foreground: "#eca517" } } }
+  bz2: { icon: { style: { foreground: "#eca517" } } }
+  7z: { icon: { style: { foreground: "#eca517" } } }
+  rar: { icon: { style: { foreground: "#eca517" } } }
+  zst: { icon: { style: { foreground: "#eca517" } } }
+  png: { icon: { style: { foreground: "#a074c4" } } }
+  jpg: { icon: { style: { foreground: "#a074c4" } } }
+  jpeg: { icon: { style: { foreground: "#a074c4" } } }
+  gif: { icon: { style: { foreground: "#a074c4" } } }
+  webp: { icon: { style: { foreground: "#a074c4" } } }
+  bmp: { icon: { style: { foreground: "#a074c4" } } }
+  ico: { icon: { style: { foreground: "#a074c4" } } }
+  svg: { icon: { style: { foreground: "#a074c4" } } }
+  mp4: { icon: { style: { foreground: "#fd971f" } } }
+  mkv: { icon: { style: { foreground: "#fd971f" } } }
+  webm: { icon: { style: { foreground: "#fd971f" } } }
+  mov: { icon: { style: { foreground: "#fd971f" } } }
+  avi: { icon: { style: { foreground: "#fd971f" } } }
+  mp3: { icon: { style: { foreground: "#d39ede" } } }
+  flac: { icon: { style: { foreground: "#d39ede" } } }
+  wav: { icon: { style: { foreground: "#d39ede" } } }
+  ogg: { icon: { style: { foreground: "#d39ede" } } }
+  m4a: { icon: { style: { foreground: "#d39ede" } } }
+  key: { icon: { style: { foreground: "#e8c547" } } }
+  pem: { icon: { style: { foreground: "#e8c547" } } }
+  crt: { icon: { style: { foreground: "#e8c547" } } }
+  pub: { icon: { style: { foreground: "#e8c547" } } }
+  gpg: { icon: { style: { foreground: "#e8c547" } } }
+  asc: { icon: { style: { foreground: "#e8c547" } } }
+  exe: { icon: { style: { foreground: "#00a4ef" } } }
+  msi: { icon: { style: { foreground: "#00a4ef" } } }
+  dll: { icon: { style: { foreground: "#00a4ef" } } }
+  deb: { icon: { style: { foreground: "#a80030" } } }
+  iso: { icon: { style: { foreground: "#d9ac8c" } } }
+  img: { icon: { style: { foreground: "#d9ac8c" } } }
+  AppImage: { icon: { style: { foreground: "#d9ac8c" } } }
+  ttf: { icon: { style: { foreground: "#ececec" } } }
+  otf: { icon: { style: { foreground: "#ececec" } } }
+  woff: { icon: { style: { foreground: "#ececec" } } }
+  woff2: { icon: { style: { foreground: "#ececec" } } }
+  log: { icon: { style: { foreground: "#8a8a8a" } } }
+  lock: { icon: { style: { foreground: "#8a8a8a" } } }
+  bak: { icon: { style: { foreground: "#8a8a8a" } } }
+  tmp: { icon: { style: { foreground: "#8a8a8a" } } }
+  dart: { icon: { style: { foreground: "#ff7043" } } }
+  r: { icon: { style: { foreground: "#b7b73b" } } }
+  R: { icon: { style: { foreground: "#b7b73b" } } }
+  jl: { icon: { style: { foreground: "#9558b2" } } }
+  xml: { icon: { style: { foreground: "#e44d26" } } }
+  dockerfile: { icon: { style: { foreground: "#2496ed" } } }
+filenames:
+  "Dockerfile": { icon: { style: { foreground: "#2496ed" } } }
+  "docker-compose.yml": { icon: { style: { foreground: "#2496ed" } } }
+  "compose.yaml": { icon: { style: { foreground: "#2496ed" } } }
+  "Makefile": { icon: { style: { foreground: "#6d8086" } } }
+  "CMakeLists.txt": { icon: { style: { foreground: "#e34c26" } } }
+  "LICENSE": { icon: { style: { foreground: "#d0bf41" } } }
+  "README.md": { icon: { style: { foreground: "#42a5f5" } } }
+  ".gitignore": { icon: { style: { foreground: "#f54d27" } } }
+  ".gitconfig": { icon: { style: { foreground: "#f54d27" } } }
+  "package.json": { icon: { style: { foreground: "#e8274b" } } }
+  "pnpm-lock.yaml": { icon: { style: { foreground: "#f9ad00" } } }
+  "requirements.txt": { icon: { style: { foreground: "#4b8bbe" } } }
+  "pyproject.toml": { icon: { style: { foreground: "#4b8bbe" } } }
+  "Cargo.toml": { icon: { style: { foreground: "#dea584" } } }
+  ".env": { icon: { style: { foreground: "#e8c547" } } }

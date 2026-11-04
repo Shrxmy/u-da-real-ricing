@@ -1,0 +1,12 @@
+# apt packages the looks need (Debian 13). quickshell comes from trixie-backports:
+#   sudo apt install -t trixie-backports quickshell
+quickshell
+imagemagick
+python3
+waybar
+fuzzel
+dunst
+hyprlock
+cava
+fastfetch
+# not in apt: oh-my-posh (ohmyposh.dev), spicetify (github.com/spicetify/cli), Inconsolata Nerd Font (nerdfonts.com)

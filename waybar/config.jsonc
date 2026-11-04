@@ -1,0 +1,120 @@
+{
+  "reload_style_on_change": true, // picks up the wallpaper accent (imported accent.css) without a full reload
+  "layer": "top",
+  "position": "top",
+  "height": 26,
+  "spacing": 0,
+  "modules-left": [
+    "custom/tag",
+    "hyprland/workspaces",
+    "custom/sep",
+    "mpris"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "custom/cpucat",
+    "custom/sep",
+    "pulseaudio",
+    "custom/sep",
+    "cpu",
+    "custom/sep",
+    "memory",
+    "custom/sep",
+    "disk",
+    "custom/sep",
+    "battery",
+    "custom/sep",
+    "clock",
+    "custom/sep",
+    "tray",
+    "custom/settings"
+  ],
+  "custom/tag": {
+    "format": " /solyvie",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} {dynamic}",
+    "dynamic-order": [
+      "title",
+      "artist"
+    ],
+    "dynamic-len": 42,
+    "player-icons": {
+      "default": "",
+      "spotify": "",
+      "brave": "",
+      "firefox": ""
+    },
+    "status-icons": {
+      "paused": ""
+    },
+    "tooltip-format": "{player}: {title} · {artist}"
+  },
+  "pulseaudio": {
+    "format": "Vol: {volume}%",
+    "format-muted": "Muted",
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  "cpu": {
+    "format": "CPU: {usage}%",
+    "interval": 2,
+    "tooltip": false
+  },
+  "memory": {
+    "format": "Ram: {used:0.1f}GiB",
+    "interval": 5
+  },
+  "disk": {
+    "format": "Disk: {free}",
+    "path": "/",
+    "interval": 60
+  },
+  "battery": {
+    "states": {
+      "warning": 25,
+      "critical": 12
+    },
+    "format": "Bat: {capacity}%",
+    "format-charging": "Bat: {capacity}% 󰂄",
+    "format-plugged": "Bat: {capacity}% ",
+    "tooltip-format": "{timeTo}"
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a %d %b %Y}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "format": {
+        "today": "<span color='#cc9166'><b>{}</b></span>"
+      }
+    }
+  },
+  "tray": {
+    "spacing": 10,
+    "icon-size": 15
+  },
+  "custom/sep": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/cpucat": {
+    "exec": "~/.config/waybar/cpucat.sh",
+    "return-type": "json",
+    "format": "{}"
+  },
+  "custom/settings": {
+    "format": "",
+    "tooltip-format": "System Settings",
+    "on-click": "systemsettings",
+    "on-click-right": "pavucontrol"
+  }
+}
