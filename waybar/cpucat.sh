@@ -9,7 +9,24 @@ idle=0
 read -r _ u n s i _ </proc/stat
 prev_busy=$((u + n + s)); prev_total=$((u + n + s + i))
 
+on_battery() {
+  local f v
+  for f in /sys/class/power_supply/{ACAD,AC,ADP1,AC0}/online; do
+    [ -r "$f" ] && { read -r v <"$f"; [ "$v" = 0 ]; return; }
+  done
+  return 1
+}
+
 while :; do
+  # On battery: one still napping frame, checked every 10 s instead of ~8 wakeups a second
+  if on_battery; then
+    printf '{"text":"%s","tooltip":"on battery: cat is resting","class":"asleep"}\n' "${nap[0]}" || exit 0
+    sleep 10
+    read -r _ u n s i _ </proc/stat
+    prev_busy=$((u + n + s)); prev_total=$((u + n + s + i))
+    continue
+  fi
+
   read -r _ u n s i _ </proc/stat
   busy=$((u + n + s)); total=$((u + n + s + i))
   pct=0

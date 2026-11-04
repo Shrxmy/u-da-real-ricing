@@ -4,6 +4,10 @@
 -- amber #cc9166  sand #d9ac8c  text #c6c0b9  muted #8a8a8a  subtle #4d4d4d
 -- mauve #b894af  sage #778c73  rose #a97070  slate #8a99a8  base #25222a
 
+-- dotfiles' hyprland.lua sets ON_BATTERY before loading this; blur and animations are the GPU's
+-- every-frame work, so they're off on battery (powerwatch.sh reloads on plug/unplug)
+local battery = ON_BATTERY == true
+
 -- active border follows the wallpaper accent (written by wallpaper.sh); amber until one is picked
 local accent = "cc9166"
 local accent_file = io.open(os.getenv("HOME") .. "/.local/state/wallpaper/accent")
@@ -35,13 +39,13 @@ hl.config({
             color        = 0xee141216,
         },
         blur = {
-            enabled  = true,
+            enabled  = not battery,
             size     = 6,
             passes   = 2,
             vibrancy = 0.17,
         },
     },
-    animations = { enabled = true },
+    animations = { enabled = not battery },
     misc = { background_color = 0xff25222a },
 })
 
