@@ -1,0 +1,8 @@
+# Overrides dunst's and Plasma's activation files (the user dir wins): a notification sent while
+# nothing owns the name starts qs-notifications.service, which only runs under Hyprland.
+# Under Plasma, plasmashell takes the name itself at startup; only a notification sent before it's up
+# fails here instead of waiting for it (what Plasma's own activation file did).
+[D-BUS Service]
+Name=org.freedesktop.Notifications
+Exec=/bin/false
+SystemdService=qs-notifications.service

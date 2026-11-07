@@ -24,6 +24,7 @@
     "custom/sep",
     "battery",
     "custom/sep",
+    "custom/notifications",
     "clock",
     "custom/sep",
     "tray",
@@ -110,6 +111,15 @@
     "exec": "~/.config/waybar/cpucat.sh",
     "return-type": "json",
     "format": "{}"
+  },
+  "custom/notifications": {
+    // written by the Quickshell notifications process, which sends SIGRTMIN+9 on every change
+    "exec": "cat \"${XDG_STATE_HOME:-$HOME/.local/state}/notifications.json\"",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 9,
+    "on-click": "qs -c notifications ipc call notifications toggle",
+    "on-click-right": "qs -c notifications ipc call notifications dnd"
   },
   "custom/settings": {
     "format": "",

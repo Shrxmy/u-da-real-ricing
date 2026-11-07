@@ -56,6 +56,9 @@ button:hover { background: inherit; box-shadow: inset 0 -3px @sand; }
 #battery.warning:not(.charging) { color: @amber; }
 #battery.critical:not(.charging) { color: @base; background-color: @rose; }
 #clock { color: @amber; }
+#custom-notifications { color: @muted; padding: 0 8px; margin-right: 4px; }
+#custom-notifications.unread { color: @base; background-color: @amber; }
+#custom-notifications.dnd { color: @rose; }
 #tray { padding-right: 12px; }
 
 /* animated cat (Waycat font): sand while running, muted while napping */

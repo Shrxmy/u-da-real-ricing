@@ -141,12 +141,18 @@ main() {
   link_file "$RICE_DIR/quickshell/wallpaper" "$HOME/.config/quickshell/wallpaper"
   link_file "$RICE_DIR/quickshell/wallpicker" "$HOME/.config/quickshell/wallpicker"
 
-  # Bar, launcher, notifications, terminals
+  # Notifications (Quickshell, Hyprland only): service + D-Bus activation override (dunst/Plasma stay installed)
+  link_file "$RICE_DIR/quickshell/notifications" "$HOME/.config/quickshell/notifications"
+  link_file "$RICE_DIR/systemd/qs-notifications.service" "$HOME/.config/systemd/user/qs-notifications.service"
+  link_file "$RICE_DIR/dbus/org.freedesktop.Notifications.service" "$HOME/.local/share/dbus-1/services/org.freedesktop.Notifications.service"
+  run_cmd systemctl --user daemon-reload || true # no user session (e.g. a TTY): picked up at next login
+  run_cmd busctl --user call org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus ReloadConfig >/dev/null || true # see the activation override now
+
+  # Bar, launcher, terminals
   link_file "$RICE_DIR/waybar/config.jsonc" "$HOME/.config/waybar/config.jsonc"
   link_file "$RICE_DIR/waybar/style.css" "$HOME/.config/waybar/style.css"
   link_file "$RICE_DIR/waybar/cpucat.sh" "$HOME/.config/waybar/cpucat.sh"
   link_file "$RICE_DIR/fuzzel/fuzzel.ini" "$HOME/.config/fuzzel/fuzzel.ini"
-  link_file "$RICE_DIR/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
   link_file "$RICE_DIR/alacritty/colors.toml" "$HOME/.config/alacritty/colors.toml"
   link_file "$RICE_DIR/konsole/Solyvie-Alacritty.colorscheme" "$HOME/.local/share/konsole/Solyvie-Alacritty.colorscheme"
 

@@ -69,6 +69,8 @@ hl.animation({ leaf = "border",           enabled = true, speed = 5, bezier = "q
 
 -- wallpaper carousel (Quickshell)
 hl.bind("SUPER + W", hl.dsp.exec_cmd("~/.config/hypr/wallpaper.sh"))
+-- notification center (Quickshell, same as the bar bell)
+hl.bind("SUPER + N", hl.dsp.exec_cmd("qs -c notifications ipc call notifications toggle"))
 
 hl.window_rule({
     name  = "terminal-glass", -- let the blurred wallpaper show through terminals
@@ -82,5 +84,9 @@ hl.window_rule({
 })
 
 return {
-    autostart = { "~/.config/hypr/wallpaper.sh restore" }, -- resident Quickshell wallpaper
+    autostart = {
+        "~/.config/hypr/wallpaper.sh restore", -- resident Quickshell wallpaper
+        "systemctl --user start qs-notifications.service", -- Quickshell notifications
+    },
+    notifications = true, -- tells dotfiles' hyprland.lua not to start dunst
 }

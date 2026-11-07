@@ -5,7 +5,6 @@ imagemagick
 python3
 waybar
 fuzzel
-dunst
 hyprlock
 cava
 fastfetch

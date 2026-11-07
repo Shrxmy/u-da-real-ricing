@@ -1,0 +1,19 @@
+# Quickshell notifications (quickshell/notifications). Hyprland only: in a Plasma session the
+# condition fails and Plasma keeps org.freedesktop.Notifications. Started by look.lua's autostart
+# and by D-Bus activation (dbus/org.freedesktop.Notifications.service), restarted if it crashes.
+[Unit]
+Description=Quickshell notifications (Hyprland)
+
+[Service]
+Type=dbus
+BusName=org.freedesktop.Notifications
+# fails on a stale signature after leaving Hyprland, so this never starts under Plasma
+ExecCondition=/bin/sh -c "exec /usr/bin/hyprctl version >/dev/null 2>&1"
+# dunst could hold the name (started by hand, or before this was installed)
+ExecStartPre=-/usr/bin/pkill -x -u %u dunst
+# same lean setup as the wallpaper process: Mesa EGL keeps the NVIDIA GPU asleep, jemalloc returns freed memory
+Environment=__EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json
+Environment=MALLOC_CONF=narenas:1,tcache:false,dirty_decay_ms:0,muzzy_decay_ms:0,background_thread:false
+ExecStart=/usr/bin/qs -c notifications
+Restart=on-failure
+RestartSec=1
